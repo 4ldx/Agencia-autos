@@ -1,0 +1,534 @@
+:root {
+  --bg-core: #030305;
+  --bg-surface: #0a0a0f;
+  --bg-card: #111118;
+  --bg-card-hover: #171722;
+  --gold-primary: #D4AF37;
+  --gold-light: #f7e8c0;
+  --gold-glow: rgba(212, 175, 55, 0.25);
+  --text-main: #ffffff;
+  --text-muted: #94949f;
+  --border-gold: rgba(212, 175, 55, 0.3);
+  --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-core);
+  color: var(--text-main);
+  overflow-x: hidden;
+}
+
+/* Barra Superior Ejecutiva */
+.top-bar {
+  background: #010103;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 0.6rem 6%;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  letter-spacing: 0.5px;
+}
+
+.top-bar span span {
+  color: var(--gold-primary);
+  font-weight: 600;
+  margin-left: 0.4rem;
+}
+
+/* Header Principal Con Efecto Glass */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(3, 3, 5, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-gold);
+  padding: 1.2rem 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.brand span {
+  color: var(--gold-primary);
+  text-shadow: 0 0 20px var(--gold-glow);
+}
+
+.nav-core {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: var(--transition-smooth);
+}
+
+.nav-links a:hover {
+  color: var(--gold-primary);
+}
+
+/* Selector de Moneda Interactivo */
+.currency-switcher {
+  display: flex;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 30px;
+  padding: 3px;
+  gap: 2px;
+}
+
+.curr-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  padding: 0.4rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.curr-btn.active, .curr-btn:hover {
+  background: var(--gold-primary);
+  color: #000;
+  box-shadow: 0 0 15px var(--gold-glow);
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, #D4AF37 0%, #aa8c2c 100%);
+  color: #000;
+  padding: 0.8rem 1.8rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+  box-shadow: 0 4px 25px rgba(212, 175, 55, 0.3);
+  letter-spacing: 0.5px;
+}
+
+.btn-gold:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 35px rgba(212, 175, 55, 0.5);
+  background: #f7e8c0;
+}
+
+/* 🎥 Hero Cinematic con Video Deportivo Inmersivo */
+.hero {
+  position: relative;
+  height: 90vh;
+  min-height: 650px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  padding: 0 6%;
+}
+
+.hero-video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  filter: contrast(1.15) brightness(0.7);
+  pointer-events: none;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: linear-gradient(180deg, rgba(3,3,5,0.4) 0%, rgba(3,3,5,0.85) 75%, var(--bg-core) 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(212, 175, 55, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-gold);
+  color: var(--gold-primary);
+  padding: 0.5rem 1.4rem;
+  border-radius: 30px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 25px var(--gold-glow);
+}
+
+.hero h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(3.2rem, 7vw, 6rem);
+  font-weight: 800;
+  line-height: 1.05;
+  margin-bottom: 1.5rem;
+  letter-spacing: -1.5px;
+}
+
+.hero h1 span {
+  color: var(--gold-primary);
+  display: inline-block;
+  text-shadow: 0 0 30px var(--gold-glow);
+}
+
+.hero p {
+  color: var(--text-muted);
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
+}
+
+/* Métricas de Alto Rendimiento */
+.hero-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(220px, 300px));
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.metric-card {
+  background: rgba(14, 14, 20, 0.6);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 1.8rem;
+  border-radius: 16px;
+  text-align: left;
+  transition: var(--transition-smooth);
+}
+
+.metric-card:hover {
+  border-color: var(--border-gold);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+}
+
+.metric-card strong {
+  display: block;
+  font-family: 'Syne', sans-serif;
+  font-size: 2.2rem;
+  color: var(--gold-primary);
+  margin-bottom: 0.3rem;
+}
+
+.metric-card span {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Sección de Inventario */
+.section {
+  padding: 7rem 6%;
+  max-width: 1500px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 3;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 4rem;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.section-title h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 2.6rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.section-title p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  margin-top: 0.6rem;
+}
+
+.filter-tabs {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: var(--bg-surface);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-muted);
+  padding: 0.7rem 1.5rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.filter-btn.active, .filter-btn:hover {
+  background: var(--gold-primary);
+  color: #000;
+  border-color: var(--gold-primary);
+  box-shadow: 0 0 20px var(--gold-glow);
+}
+
+/* Grid de Autos con Tarjetas de Élite */
+.inventory-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(410px, 1fr));
+  gap: 2.5rem;
+}
+
+.car-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-gold);
+  border-radius: 22px;
+  overflow: hidden;
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+}
+
+.car-card:hover {
+  transform: translateY(-10px);
+  background: var(--bg-card-hover);
+  border-color: var(--gold-primary);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 0 0 25px var(--gold-glow);
+}
+
+.car-img-wrapper {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.car-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.car-card:hover .car-img {
+  transform: scale(1.08);
+}
+
+.car-badge {
+  position: absolute;
+  top: 1.2rem;
+  left: 1.2rem;
+  background: rgba(3, 3, 5, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-gold);
+  color: var(--gold-primary);
+  padding: 0.45rem 1.1rem;
+  border-radius: 8px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.car-content {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.car-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+  margin-bottom: 1.8rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  text-align: center;
+}
+
+.meta-box {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 0.7rem 0.5rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.meta-box span {
+  display: block;
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.meta-box strong {
+  font-size: 0.9rem;
+  color: #fff;
+  font-weight: 600;
+  margin-top: 0.3rem;
+  display: block;
+}
+
+.car-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.55rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+.car-specs-text {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+.car-footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 1.8rem;
+  margin-top: auto;
+}
+
+.car-price span {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.car-price strong {
+  font-size: 1.8rem;
+  color: var(--gold-primary);
+  font-family: 'Syne', sans-serif;
+}
+
+.btn-card-action {
+  background: transparent;
+  border: 1px solid var(--gold-primary);
+  color: var(--gold-primary);
+  padding: 0.8rem 1.6rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-card-action:hover {
+  background: var(--gold-primary);
+  color: #000;
+  box-shadow: 0 0 25px var(--gold-glow);
+}
+
+/* Footer Ejecutivo */
+footer {
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border-gold);
+  padding: 6rem 6% 3.5rem;
+  text-align: center;
+  position: relative;
+  z-index: 3;
+}
+
+.footer-content {
+  max-width: 700px;
+  margin: 0 auto 3rem;
+}
+
+.footer-content h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 2.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.footer-content p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  margin-bottom: 2.5rem;
+  line-height: 1.7;
+}
+
+.footer-copy {
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 0.85rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 2.5rem;
+}
+
+/* Responsive */
+@media(max-width: 992px) {
+  .hero-metrics {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 3rem auto 0;
+  }
+  .nav-core {
+    display: none;
+  }
+  .inventory-grid {
+    grid-template-columns: 1fr;
+  }
+}
